@@ -1,0 +1,46 @@
+/* colorpallete for the website
+
+#FCFCFC - white
+#D2F898 - lightgreen
+#F6F930 - yellow
+#2F2F2F - jetGray
+#000000 - black
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Overpass:wght@200&family=Roboto+Condensed:wght@300&display=swap');
+/*font-family: 'Overpass', sans-serif;*/
+
+* {
+    box-sizing: border-box;
+    padding: 5px;
+
+    font-family: 'Overpass', sans-serif;
+    color: #fcfcfc;
+}
+
+body {
+    height: 90vh;
+    background-color: #2f2f2f;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 3vh;
+}
+
+#dogIconTop {
+    height: 7vh;
+    width: 7vh;
+    background-size: cover;
+    background-position: center;
+}
+
+#wrapper {
+    height: 70vh;
+    margin-bottom: 50px;
+}
+
+

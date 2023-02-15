@@ -1,0 +1,44 @@
+#account {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ 
+    background-color: #00000024;
+    border-radius: 5px;
+    border-bottom: 1px solid #D2F898;
+    margin-bottom: 25px;
+}
+
+button,
+#squareGrid div {
+    background-color: #00000024;
+    border: 0;
+    border: 1px solid #D2F898;
+    border-radius: 5px;
+    border-bottom: 2px solid #D2F898;
+    cursor: pointer;
+}
+
+button,
+#squareGrid div:hover {
+    background: #0000005d;
+}
+
+#loadingImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+}
+
+#loadingImage img {
+    height: 50vh;
+    width: 50vh;
+}
+
+#squareGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 7px;
+}
