@@ -25,26 +25,4 @@
         <div><a href="#">New to this? Register for free</a></div> 
         
 */
-initializeWebsite()
-function initializeWebsite( ) {
-    document.querySelector( "#wrapper").innerHTML = `
-        <div>LOGIN / Register</div>
-        <div id="inputFields">
-            <label for="username">Username:</label>
-            <input type="text" name="username">
-            
-            <label for="password">Password:</label>
-            <input type="password" name="password"> 
-        </div>
-
-        <div>Let the magic start!</div>
-        <button>Login</button>
-        <div><a href="#">New to this? Register for free</a></div> 
-    `;
-
-    document.querySelector("").addEventListener( "click", changeLogin);
-}
-
-function changeLogin( event) {
-    console.log( "hello world!");
-}
+initializeLoginRegister( "LOGIN", "Let the magic start!", "Login", "New to this? Register for free");
