@@ -43,6 +43,9 @@ async function createUserOrLogin( event) {
             action: “register”,
             user_name: string, username to register
             password: string, password to register
+
+            409 = bad request --> sorry that name is already taken
+            200 = Registration Complete. Please proceed to login.
         }
         */
         const postCredentials = {
@@ -62,8 +65,12 @@ async function createUserOrLogin( event) {
         404 = not found
         400 = bad rqst
         200 = Object { un: --:--, pw: --:--}
+
+        if 404 === quote --> wrong username or password.
         */
         console.log( "LOGIN");
         console.log( await fetchRqstHandler( `https://teaching.maumt.se/apis/access/?action=check_credentials&user_name=${usernameInputValue}&password=${passwordInputValue}`));
+        removeScreenNotification();
+        
     }
 }
