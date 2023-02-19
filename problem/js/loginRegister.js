@@ -30,10 +30,40 @@ function changeLoginScreen( event) {
     }
 }
 
-function createUserOrLogin( event) {
+async function createUserOrLogin( event) {
+    const usernameInputValue = document.querySelector( "input[name='username']").value;
+    const passwordInputValue = document.querySelector( "input[name='password']").value;
+
+    // console.log( [usernameInputValue, passwordInputValue]);
     if( document.querySelector( "button").textContent !== "Login") {
         console.log( "REGISTER");
+
+        /* POST CREDENTIALS 
+        { https://teaching.maumt.se/apis/access/
+            action: “register”,
+            user_name: string, username to register
+            password: string, password to register
+        }
+        */
+        const postCredentials = {
+            method: "POST",
+            headers: {"Content-type": "application/json; charset=UTF-8"},
+            body: JSON.stringify({action: "register", user_name: usernameInputValue, password: passwordInputValue}),
+        }
+        const registerRequest = new Request( 'https://teaching.maumt.se/apis/access/', postCredentials)
+        console.log( await fetchRqstHandler( registerRequest));
+
+
     } else {
+
+        /* GET LOGIN 
+        https://teaching.maumt.se/apis/access/?action=check_credentials&user_name=X&password=Y
+
+        404 = not found
+        400 = bad rqst
+        200 = Object { un: --:--, pw: --:--}
+        */
         console.log( "LOGIN");
+        console.log( await fetchRqstHandler( `https://teaching.maumt.se/apis/access/?action=check_credentials&user_name=${usernameInputValue}&password=${passwordInputValue}`));
     }
 }
