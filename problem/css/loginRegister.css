@@ -60,3 +60,12 @@ button:hover {
     transition-property: background-color, .5s;
     cursor: pointer;
 }
+
+.errorLogin {
+    background-color: #00000024;
+    border-bottom: 1px solid #6b0303;
+    border-radius: 5px;
+    color: #6b0303;
+    transition-property: all;
+    transition-duration: .5s;
+}

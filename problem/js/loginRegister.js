@@ -11,7 +11,7 @@ function initializeLoginRegister( title, quote, button, link  ) {
             <input type="password" name="password"> 
         </div>
 
-        <div>${quote}</div>
+        <div class="quote">${quote}</div>
         <button>${button}</button>
         <div><a href="#">${link}</a></div> 
     `;
@@ -36,41 +36,25 @@ async function createUserOrLogin( event) {
 
     // console.log( [usernameInputValue, passwordInputValue]);
     if( document.querySelector( "button").textContent !== "Login") {
-        console.log( "REGISTER");
-
-        /* POST CREDENTIALS 
-        { https://teaching.maumt.se/apis/access/
-            action: “register”,
-            user_name: string, username to register
-            password: string, password to register
-
-            409 = bad request --> sorry that name is already taken
-            200 = Registration Complete. Please proceed to login.
-        }
-        */
         const postCredentials = {
             method: "POST",
             headers: {"Content-type": "application/json; charset=UTF-8"},
             body: JSON.stringify({action: "register", user_name: usernameInputValue, password: passwordInputValue}),
         }
         const registerRequest = new Request( 'https://teaching.maumt.se/apis/access/', postCredentials)
-        console.log( await fetchRqstHandler( registerRequest));
+        await fetchRqstHandler( registerRequest, "register");
 
 
     } else {
-
-        /* GET LOGIN 
-        https://teaching.maumt.se/apis/access/?action=check_credentials&user_name=X&password=Y
-
-        404 = not found
-        400 = bad rqst
-        200 = Object { un: --:--, pw: --:--}
-
-        if 404 === quote --> wrong username or password.
-        */
-        console.log( "LOGIN");
-        console.log( await fetchRqstHandler( `https://teaching.maumt.se/apis/access/?action=check_credentials&user_name=${usernameInputValue}&password=${passwordInputValue}`));
+        const loginResult = await fetchRqstHandler( `https://teaching.maumt.se/apis/access/?action=check_credentials&user_name=${usernameInputValue}&password=${passwordInputValue}`, "login");
         removeScreenNotification();
+       
+       
+        if( loginResult !== "error") {
+            createQuizzes( loginResult.user_name, loginResult.password);
+        }
+
+        console.log( loginResult);
         
     }
 }

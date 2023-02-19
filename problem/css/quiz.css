@@ -9,7 +9,7 @@
     margin-bottom: 25px;
 }
 
-button,
+#account button,
 #squareGrid div {
     background-color: #00000024;
     border: 0;
@@ -19,7 +19,7 @@ button,
     cursor: pointer;
 }
 
-button,
+#account button,
 #squareGrid div:hover {
     background: #0000005d;
 }
