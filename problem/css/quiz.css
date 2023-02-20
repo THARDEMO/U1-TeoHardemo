@@ -42,3 +42,9 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 7px;
 }
+
+#squareGrid div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

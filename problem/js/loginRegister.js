@@ -34,7 +34,6 @@ async function createUserOrLogin( event) {
     const usernameInputValue = document.querySelector( "input[name='username']").value;
     const passwordInputValue = document.querySelector( "input[name='password']").value;
 
-    // console.log( [usernameInputValue, passwordInputValue]);
     if( document.querySelector( "button").textContent !== "Login") {
         const postCredentials = {
             method: "POST",
@@ -48,7 +47,6 @@ async function createUserOrLogin( event) {
     } else {
         const loginResult = await fetchRqstHandler( `https://teaching.maumt.se/apis/access/?action=check_credentials&user_name=${usernameInputValue}&password=${passwordInputValue}`, "login");
         removeScreenNotification();
-       
        
         if( loginResult !== "error") {
             createQuizzes( loginResult.user_name, loginResult.password);
