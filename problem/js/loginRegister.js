@@ -48,7 +48,12 @@ async function createUserOrLogin( event) {
         const loginResult = await fetchRqstHandler( `https://teaching.maumt.se/apis/access/?action=check_credentials&user_name=${usernameInputValue}&password=${passwordInputValue}`, "login");
    
         loginResult === "error" ? removeScreenNotification() : loginResult;
-        loginResult === "error" || loginResult === "teapot" ? null : createQuizzes( loginResult.data.user_name);
+        loginResult === "error" || loginResult === "teapot" ? null : initializeQuiz();
+        
+        function initializeQuiz(){
+            localStorage.setItem( "userObject", JSON.stringify( loginResult.data));
+            createQuizzes( loginResult.data.user_name);
+        };
         
     }
 }

@@ -1,6 +1,8 @@
 "use strict";
 
 async function createQuizzes( username) {
+
+    console.log( localStorage.getItem( "userObject"));
     document.querySelector( "#modularStylesheetLink").setAttribute( "href", "css/quiz.css")
 
     document.querySelector( "#wrapper").innerHTML = `
@@ -17,6 +19,7 @@ async function createQuizzes( username) {
     `
     
     document.querySelector( "#account button").addEventListener( "click", function(){
+        localStorage.removeItem( "userObject");
         location.reload();
     });
 
