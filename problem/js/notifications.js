@@ -3,6 +3,9 @@
 function screenNotificationCreater( notice, buttonDecider) {
     removeScreenNotification();
     
+    // let buttonContent = "CLOSE";
+    let buttonContent = notice === "CORRECT!" ? "ONE MORE" : "CLOSE";
+
     const notification = document.createElement( 'div');
     notification.setAttribute( 'id', 'notification');
     document.body.prepend( notification);
@@ -11,10 +14,12 @@ function screenNotificationCreater( notice, buttonDecider) {
         notification.innerHTML = `
             <div>
                 ${notice}<br>
-                <button>CLOSE</button>
+                <button>${buttonContent}</button>
             </div>
         `;
-        document.querySelector( "#notification button").addEventListener( "click", removeScreenNotification);
+        if( buttonContent === "CLOSE") {
+            document.querySelector( "#notification button").addEventListener( "click", removeScreenNotification);
+        } else { document.querySelector( "#notification button").addEventListener( "click", newQuizQuestion)}
     }else {
         notification.innerHTML = `
             <div>${notice}</div>

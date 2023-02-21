@@ -35,6 +35,8 @@
 #loadingImage img {
     height: 50vh;
     width: 50vh;
+
+    border-radius: 25px;
 }
 
 #squareGrid {

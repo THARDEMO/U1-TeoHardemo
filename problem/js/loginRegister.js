@@ -1,6 +1,8 @@
 "use strict";
 
 function initializeLoginRegister( title, quote, button, link  ) {
+    // document.querySelector( "#modularStylesheetLink").setAttribute( "href", "css/loginRegister.css")
+
     document.querySelector( "#wrapper").innerHTML = `
         <div>${title}</div>
         <div id="inputFields">
@@ -46,13 +48,9 @@ async function createUserOrLogin( event) {
 
     } else {
         const loginResult = await fetchRqstHandler( `https://teaching.maumt.se/apis/access/?action=check_credentials&user_name=${usernameInputValue}&password=${passwordInputValue}`, "login");
-        removeScreenNotification();
-       
-        if( loginResult !== "error") {
-            createQuizzes( loginResult.user_name, loginResult.password);
-        }
-
-        console.log( loginResult);
+   
+        loginResult === "error" ? removeScreenNotification() : loginResult;
+        loginResult === "error" || loginResult === "teapot" ? null : createQuizzes( loginResult.data.user_name, loginResult.data.password);
         
     }
 }

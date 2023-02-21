@@ -84,12 +84,3 @@ const ALL_BREEDS = [
   {"name":"spanish waterdog","url":"waterdog/spanish"},
   {"name":"irish wolfhound","url":"wolfhound/irish"}
 ];
-
-const temp_BREEDS = [
-  {"name":"welsh terrier","url":"terrier/welsh"},
-  {"name":"westhighland terrier","url":"terrier/westhighland"},
-  {"name":"wheaten terrier","url":"terrier/wheaten"},
-  {"name":"yorkshire terrier","url":"terrier/yorkshire"},
-  {"name":"spanish waterdog","url":"waterdog/spanish"},
-  {"name":"irish wolfhound","url":"wolfhound/irish"}
-]
