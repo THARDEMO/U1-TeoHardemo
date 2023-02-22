@@ -1,8 +1,6 @@
 "use strict";
 
 async function createQuizzes( username) {
-
-    console.log( localStorage.getItem( "userObject"));
     document.querySelector( "#modularStylesheetLink").setAttribute( "href", "css/quiz.css")
 
     document.querySelector( "#wrapper").innerHTML = `
