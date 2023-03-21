@@ -8,38 +8,42 @@
 
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Overpass:wght@200&family=Roboto+Condensed:wght@300&display=swap');
-/*font-family: 'Overpass', sans-serif;*/
+@font-face {
+    font-family: Roboto;
+    src: url("../fonts/RobotoCondensed-Regular.ttf");
+}
 
 * {
     box-sizing: border-box;
     padding: 5px;
 
-    font-family: 'Overpass', sans-serif;
+    font-family: 'Roboto';
     color: #fcfcfc;
 }
 
 body {
-    height: 90vh;
     background-color: #2f2f2f;
     transition: background-color, .5s;
+
+    display: grid;
+    grid-template-columns: 100%;
+
 }
 
-nav {
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 3vh;
+    font-size: 5vw;
 }
 
 #dogIconTop {
-    height: 7vh;
-    width: 7vh;
+    height: 15vw;
+    width: 15vw;
     background-size: cover;
     background-position: center;
 }
 
 #wrapper {
-    height: 70vh;
     margin-bottom: 50px;
 }

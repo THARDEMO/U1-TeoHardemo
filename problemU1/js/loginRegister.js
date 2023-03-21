@@ -1,6 +1,6 @@
 "use strict";
 
-function initializeLoginRegister( title, quote, button, link  ) {
+function initializeLoginRegister( title, quote, button, link) {
     document.querySelector( "#wrapper").innerHTML = `
         <div>${title}</div>
         <div id="inputFields">

@@ -45,8 +45,10 @@ async function createQuizzes( username) {
         document.querySelector( "#squareGrid").append( breedChoiceDOM);
         
         if( breed.name === CorrectAnswerBreed.name) {
-            breedChoiceDOM.addEventListener( "click", correctAnswerInQuiz)
-        }else {breedChoiceDOM.addEventListener( "click", wrongAnswerInQuiz)}
+            breedChoiceDOM.addEventListener( "click", correctAnswerInQuiz);
+        }else {
+            breedChoiceDOM.addEventListener( "click", wrongAnswerInQuiz);
+        }
         
         // breed.name === CorrectAnswerBreed.name ? breedChoiceDOM.addEventListener( "click", correctAnswerInQuiz) : breedChoiceDOM.addEventListener( "click", wrongAnswerInQuiz);
     })

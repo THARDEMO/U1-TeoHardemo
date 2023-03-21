@@ -1,2 +1,5 @@
 # U1-TeoHardemo
-the reprository for U1 task in DU3
+
+GitHub --> https://github.com/THARDEMO/U1-TeoHardemo
+
+Webbsite --> https://wdu.maumt.se/ht22/bed_bird/problemU1/

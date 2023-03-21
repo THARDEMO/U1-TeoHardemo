@@ -17,7 +17,9 @@ function screenNotificationCreater( notice, buttonDecider) {
         `;
         if( buttonContent === "CLOSE") {
             document.querySelector( "#notification button").addEventListener( "click", removeScreenNotification);
-        }else { document.querySelector( "#notification button").addEventListener( "click", newQuizQuestion)}
+        }else { 
+            document.querySelector( "#notification button").addEventListener( "click", newQuizQuestion);
+        }
 
     }else {
         notification.innerHTML = `

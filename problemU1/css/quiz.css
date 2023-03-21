@@ -33,9 +33,7 @@
 }
 
 #loadingImage img {
-    height: 50vh;
-    width: 50vh;
-
+    width: 90vw;
     border-radius: 25px;
 }
 
@@ -49,4 +47,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    padding: 10px;
 }

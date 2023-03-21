@@ -4,22 +4,24 @@ async function fetchRqstHandler( rqstURL, type) {
     
     if( type !== "dogAPI") {
         screenNotificationCreater( "Contacting Server...", false);
-    } else { screenNotificationCreater( "Getting a random image...", false);}
+    } else { 
+        screenNotificationCreater( "Getting a random image...", false);
+    }
 
     let response = await fetch( rqstURL);
 
     if( rqstURL.method === 'POST') {
         if( response.status === 200) {
-            screenNotificationCreater( "Registration Complete. Please proceed to login.", true)
+            screenNotificationCreater( "Registration Complete. Please proceed to login.", true);
         }
         
         if( response.status === 409) {
-            screenNotificationCreater( "Sorry, that name is taken. Please try with another one.", true)
+            screenNotificationCreater( "Sorry, that name is taken. Please try with another one.", true);
         }
     }
     
     if( response.status === 418) {
-        screenNotificationCreater( "The server thinks it's not a teapot!", true)
+        screenNotificationCreater( "The server thinks it's not a teapot!", true);
         return "teapot";
     }
     
